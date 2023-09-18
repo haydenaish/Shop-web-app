@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="js/external/vue.global.js"></script>
+        <script src="js/external/vuex.global.js"></script>
+        <script src="js/external/vuex-persistedstate.js"></script>
+        <script src="js/external/axios.js"></script>
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <main>
+            <navmenu> </navmenu>
+            <h1>Products</h1>
+
+            <div class="button-container">
+                <a href="view-products.jsp?category=All"><button>All</button></a>
+                <a href="view-products.jsp?category=<%= category%>"><button><%= category%></button></a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>List Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>product.getProductId(</td>
+                        <td> product.getName()</td>
+                        <td> product.getDescription()</td>
+                        <td> product.getCategory()</td>
+                        <td> product.getListPrice()</td>
+                        <td> product.getQuantityInStock()</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="center-button">
+                <a class="nav" href="index.html"><button>Back to Menu</button></a>
+            </div>
+        </main>
+        <script type="module" src="js/view-products.js"></script>
+    </body>
+</html>

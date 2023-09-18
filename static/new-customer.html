@@ -1,30 +1,22 @@
-<%-- 
-    Document   : new-customer
-    Created on : 18 Aug 2023, 11:35:08 am
-    Author     : haydenaish
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="js/external/vue.global.js"></script>
+        <script src="js/external/vuex.global.js"></script>
+        <script src="js/external/vuex-persistedstate.js"></script>
+        <script src="js/external/axios.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
         <main>
-            <%@include file="WEB-INF/jspf/navigation.jspf"%>
+            <navmenu> </navmenu>
             <h1>Register Customer</h1>
 
             <fieldset>
 
                 <legend>Customer Details</legend>
-                <%                    String validation = (String) session.getAttribute("validation");
-                    validation = validation != null ? validation : "";
-                %>
-
-                <p><%= validation%></p>
 
                 <form action="new-customer" method="POST">
 
@@ -43,9 +35,10 @@
             </fieldset>
 
             <div class="center-button">
-                <a class="nav" href="index.jsp"><button>Back to Menu</button></a>
+                <a class="nav" href="index.html"><button>Back to Menu</button></a>
             </div>
 
         </main>
+        <script type="module" src="js/new-customer.js"></script>
     </body>
 </html>

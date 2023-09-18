@@ -29,8 +29,8 @@ public class CustomerModule extends Jooby{
             }
         });
         
-        post("/api/students", ctx -> {
-            
-        });
+//        post("/api/students", ctx -> {
+//            
+//        });
     }
 }

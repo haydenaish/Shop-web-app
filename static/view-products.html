@@ -14,9 +14,10 @@
             <navmenu> </navmenu>
             <h1>Products</h1>
 
-            <div class="button-container">
-                <a href="view-products.jsp?category=All"><button>All</button></a>
-                <a href="view-products.jsp?category=<%= category%>"><button><%= category%></button></a>
+            <div id="categories" >
+                <button @click.prevent="getProducts()">All</button>
+                <!--<button @click.prevent="getProducts()">test</button>-->
+                <button v-for="category in categories" @click.prevent="filterByCategory(category)">{{category}}</button>
             </div>
             <table>
                 <thead>
@@ -30,15 +31,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>product.getProductId(</td>
-                        <td> product.getName()</td>
-                        <td> product.getDescription()</td>
-                        <td> product.getCategory()</td>
-                        <td> product.getListPrice()</td>
-                        <td> product.getQuantityInStock()</td>
+                    <tr v-for ="product in products" >
+                        <td>{{product.productId}}</td>
+                        <td> {{product.name}}</td>
+                        <td> {{product.description}}</td>
+                        <td> {{product.category}}</td>
+                        <td> {{product.listPrice}}</td>
+                        <td> {{product.quantityInStock}}</td>
                     </tr>
-
                 </tbody>
             </table>
 

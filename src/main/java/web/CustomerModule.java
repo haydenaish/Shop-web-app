@@ -29,8 +29,12 @@ public class CustomerModule extends Jooby{
             }
         });
         
-//        post("/api/students", ctx -> {
-//            
-//        });
+        post("/api/register", ctx -> {
+            Customer customer = ctx.body().to(Customer.class);
+            dao.saveCustomer(customer);
+            System.out.println("Success");
+            return ctx.send(StatusCode.CREATED);
+  
+        });
     }
 }

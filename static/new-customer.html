@@ -18,7 +18,7 @@
 
                 <legend>Customer Details</legend>
 
-                <form action="new-customer" method="POST">
+                <form @submit.prevent="addCustomer()">
 
                     <!--<label>ID:</label><input type="number" name="id" required/>-->
                     <label>Username</label><input type="text" name="username" required/>

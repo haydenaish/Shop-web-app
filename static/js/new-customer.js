@@ -5,13 +5,13 @@
 
 
 /* global Vue, axios */
-
+var customerApi = '/api/register';
 const app = Vue.createApp({
 
 	data() {
 		return {
 			// models map (comma separated key/value pairs)
-
+                        customer: new Object()
 		};
 	},
 
@@ -24,7 +24,15 @@ const app = Vue.createApp({
 
 	methods: {
 		// comma separated function declarations
-
+            addCustomer() {
+            axios.post(customerAPI, this.customer)
+                    .then(() => {
+                        window.location = 'view-products.html';
+                    })
+                    .catch(error => {
+                        alert(error.response.data.message);
+                    });
+        }
 	},
 
 	// other modules
@@ -33,7 +41,11 @@ const app = Vue.createApp({
 });
 
 // other component imports go here
+import { navigationMenu } from './navigation-menu.js';
+import { sessionStore } from './session-store.js';
+app.use(sessionStore);
 
+app.component('navmenu', navigationMenu);
 
 // mount the page - this needs to be the last line in the file
 app.mount("main");

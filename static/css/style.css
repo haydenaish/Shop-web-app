@@ -1,0 +1,104 @@
+/* Center the main content area */
+main {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Page headings */
+h1 {
+  text-align: center;
+  padding: 60px; 
+  font-size: 4rem;
+  color: rgb(1,1,1); 
+  background-color: rgb(254,221,3); 
+  border-radius: 10px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Nav links */
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: rgb(254,221,3);
+  background-color: #000; 
+}
+
+nav {
+  
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Tables */
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  color: black; 
+}
+
+/* Forms */
+form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 1em 0.5em;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+label {
+  grid-column: 1 / 2;
+  text-align: right;
+  color: #555; 
+}
+
+input, button, select, textarea {
+  grid-column: 2 / 3;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: rgb(0,0,0);
+  color: rgb(254,221,3);
+  cursor: pointer;
+}
+
+textarea {
+  height: 6em;
+  resize: vertical;
+}
+
+th, a.nav, legend, label {
+  color: black; /* Yellow color */
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
+}
+
+.button-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 20px;
+  flex-wrap: wrap;
+}

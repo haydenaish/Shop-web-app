@@ -8,10 +8,7 @@ public class Server extends Jooby {
 
 
 	public Server() {
-		
-
 		install(new GsonModule());
-
 		mount(new StaticAssetModule());
 	}
 

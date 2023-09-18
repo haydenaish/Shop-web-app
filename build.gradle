@@ -3,6 +3,17 @@ plugins {
 	id "jacoco";
 }
 
+sourceSets {
+	"static" {
+		resources {
+			srcDirs = ["static"]
+		}
+		java{
+			srcDirs = []
+		}
+	}
+}
+
 def defaultMainClassName = "web.Server";
 
 application {
@@ -38,6 +49,7 @@ dependencies {
 	def jdbiVer = "3.40.0"
 	implementation group: "org.jdbi", name: "jdbi3-core", version: jdbiVer;
 	implementation group: "org.jdbi", name: "jdbi3-sqlobject", version: jdbiVer;
+
 }
 
 test {

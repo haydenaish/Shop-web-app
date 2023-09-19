@@ -75,8 +75,8 @@ const app = Vue.createApp({
 
 // other component imports go here
 import { navigationMenu } from './navigation-menu.js';
-//import { sessionStore } from './session-store.js';
-//app.use(sessionStore);
+import { sessionStore } from './session-store.js';
+app.use(sessionStore);
 
 app.component('navmenu', navigationMenu);
 

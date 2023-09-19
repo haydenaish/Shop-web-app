@@ -5,7 +5,7 @@
 
 
 /* global Vue, axios */
-var customerApi = '/api/register';
+var customerApi = "/api/register";
 const app = Vue.createApp({
 
 	data() {
@@ -18,14 +18,14 @@ const app = Vue.createApp({
 	mounted() {
 		// semicolon separated statements
 
-		alert('Mounted method called');
+//		alert('Mounted method called');
 
 	},
 
 	methods: {
 		// comma separated function declarations
             addCustomer() {
-            axios.post(customerAPI, this.customer)
+            axios.post(customerApi, this.customer)
                     .then(() => {
                         window.location = 'view-products.html';
                     })

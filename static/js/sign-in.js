@@ -5,12 +5,13 @@
 
 
 /* global Vue, axios */
-
+var customerApi = ({username}) => `/api/customers/${username}`;
 const app = Vue.createApp({
 
 	data() {
 		return {
 			// models map (comma separated key/value pairs)
+                        customer: new Object()
 
 		};
 	},
@@ -18,12 +19,24 @@ const app = Vue.createApp({
 	mounted() {
 		// semicolon separated statements
 
-		alert('Mounted method called');
+//		alert('Mounted method called');
 
 	},
 
 	methods: {
 		// comma separated function declarations
+
+            signInCustomer() {
+            axios.get(customerApi({'username': this.customer.username}))
+                    .then((rsp) => {
+                        this.customer = rsp.data;
+                        dataStore.commit("signIn", this.customer);
+                        window.location = 'view-products.html';
+                    })
+                    .catch(error => {
+                        alert(error.response.data.message);
+                    });
+            }
 
 	},
 
@@ -34,8 +47,8 @@ const app = Vue.createApp({
 
 // other component imports go here
 import { navigationMenu } from './navigation-menu.js';
-import { sessionStore } from './session-store.js';
-app.use(sessionStore);
+import { dataStore } from './data-store.js'
+app.use(dataStore);
 
 app.component('navmenu', navigationMenu);
 

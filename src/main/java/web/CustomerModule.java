@@ -15,9 +15,8 @@ import io.jooby.StatusCode;
 public class CustomerModule extends Jooby{
     public CustomerModule(CustomerDAO dao) {
         get("/api/customers/{username}", ctx -> {
-
-           
             String username = ctx.path("username").value();
+            System.out.println(username);
 
             Customer customer = dao.searchByUserName(username);
 
@@ -32,7 +31,7 @@ public class CustomerModule extends Jooby{
         post("/api/register", ctx -> {
             Customer customer = ctx.body().to(Customer.class);
             dao.saveCustomer(customer);
-            System.out.println("Success");
+//            System.out.println("Success");
             return ctx.send(StatusCode.CREATED);
   
         });

@@ -32,7 +32,7 @@ const app = Vue.createApp({
                     .catch(error => {
                         alert(error.response.data.message);
                     });
-        }
+            }
 	},
 
 	// other modules
@@ -42,8 +42,8 @@ const app = Vue.createApp({
 
 // other component imports go here
 import { navigationMenu } from './navigation-menu.js';
-import { sessionStore } from './session-store.js';
-app.use(sessionStore);
+import { dataStore } from './data-store.js'
+app.use(dataStore);
 
 app.component('navmenu', navigationMenu);
 

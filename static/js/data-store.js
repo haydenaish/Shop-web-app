@@ -4,20 +4,27 @@
  */
 
 
-export const sessionStore = Vuex.createStore({
+export const dataStore = Vuex.createStore({
 
 	state () {
-		selectedStudent: null;
+		// signed in customer
+		customer: null;
+		
+		// the shopping cart items
+		items: null;
 	},
 
 	mutations: {
 
-		selectStudent(state, student) {
-			state.selectedStudent = student;
+		// user signs in
+		signIn(state, customer) {
+			state.customer = customer;
+			state.items = new Array();
 		}
 
 	},
 
+	// add session storage persistence
 	plugins: [window.createPersistedState({storage: window.sessionStorage})]
 
 });

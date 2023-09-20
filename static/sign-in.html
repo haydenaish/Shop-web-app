@@ -18,10 +18,11 @@
 
                 <legend>Customer Details</legend>
 
-                <form action="sign-in" method="POST">
+                <form @submit.prevent="signInCustomer()">
+                <!--<form action="sign-in" method="get">-->
 
-                    <label>Username:</label><input type="text" name="username"/>
-                    <label>Password</label><input type="text" name="password"/>
+                    <label>Username:</label><input type="text" v-model="customer.username"/>
+                    <label>Password</label><input type="text" v-model="customer.password"/>
 
 
                     <button type="submit">sign in</button>

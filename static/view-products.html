@@ -16,7 +16,7 @@
 
             <div id="categories" >
                 <button @click.prevent="getProducts()">All</button>
-                <!--<button @click.prevent="getProducts()">test</button>-->
+                
                 <button v-for="category in categories" @click.prevent="filterByCategory(category)">{{category}}</button>
             </div>
             <table>
@@ -38,6 +38,7 @@
                         <td> {{product.category}}</td>
                         <td> {{product.listPrice}}</td>
                         <td> {{product.quantityInStock}}</td>
+                        <td><button @click.prevent="buyProduct(product)">Buy</button></td>
                     </tr>
                 </tbody>
             </table>

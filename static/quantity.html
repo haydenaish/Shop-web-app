@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="js/external/vue.global.js"></script>
+        <script src="js/external/vuex.global.js"></script>
+        <script src="js/external/vuex-persistedstate.js"></script>
+        <script src="js/external/axios.js"></script>
+        <title>JSP Page</title>
+    </head>
+
+    <body>
+        <main>
+            <navmenu> </navmenu>
+            <h1>How many {{product.name}} do you want to buy</h1>
+            <div class="card-content">
+                <table>
+                    <tr>
+                        <td><b>ID</b></td>
+                        <td>{{product.productId}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Name</b></td>
+                        <td>{{product.name}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Description</b></td>
+                        <td>{{product.description}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Category</b></td>
+                        <td>{{product.category}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>List Price</b></td>
+                        <td>{{product.listPrice}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Quantity</b></td>
+                        <td>{{product.quantityInStock}}</td>
+                    </tr>
+                </table>
+            </div>
+            <fieldset>
+                <legend><b>Quantity</b></legend>
+                <label>How many do you want to buy?</label><input type="number" name="id" required/>
+                <button @click.prevent="buyProduct(product)">Buy</button>
+            </fieldset>
+        </main>
+        <script type="module" src="js/quantity.js"></script>
+    </body>
+</html>

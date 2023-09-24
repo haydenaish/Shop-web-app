@@ -6,25 +6,36 @@
 
 export const dataStore = Vuex.createStore({
 
-	state () {
-		// signed in customer
-		customer: null;
-		
-		// the shopping cart items
-		items: null;
-	},
+    state() {
+        // signed in customer
+        customer: null;
 
-	mutations: {
+        // the shopping cart items
+        items: null;
 
-		// user signs in
-		signIn(state, customer) {
-			state.customer = customer;
-			state.items = new Array();
-		}
+        selectedProduct: null;
+    },
 
-	},
+    mutations: {
 
-	// add session storage persistence
-	plugins: [window.createPersistedState({storage: window.sessionStorage})]
+        // user signs in
+        signIn(state, customer) {
+            state.customer = customer;
+            state.items = new Array();
+        },
+        // user selects a product
+        selectProduct(state, product) {
+            state.selectedProduct = product;
+        },
+        // add item to cart
+        addItem(state, item) {
+            state.items.push(item);
+        }
+
+
+    },
+
+    // add session storage persistence
+    plugins: [window.createPersistedState({storage: window.sessionStorage})]
 
 });

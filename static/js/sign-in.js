@@ -49,7 +49,6 @@ const app = Vue.createApp({
 import { navigationMenu } from './navigation-menu.js';
 import { dataStore } from './data-store.js'
 app.use(dataStore);
-
 app.component('navmenu', navigationMenu);
 
 

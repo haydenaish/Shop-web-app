@@ -46,12 +46,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </tr>
                 </table>
             </div>
-            <fieldset>
+            <form class="quantity-container" @submit.prevent="addToCart()">
                 <legend><b>Quantity</b></legend>
-                <label>How many do you want to buy?</label><input type="number" name="id" required/>
-                <button @click.prevent="buyProduct(product)">Buy</button>
-            </fieldset>
+                <label>How many do you want to buy?</label><input type="number" v-model="quantity" name="id" required/>
+                <button type="submit">Add To Cart</button>
+            </form>
         </main>
-        <script type="module" src="js/quantity.js"></script>
+        <script type="module" src="js/cart.js"></script>
     </body>
 </html>

@@ -10,7 +10,7 @@
 drop table if exists Customer;
 drop table if exists Product;
 drop table if exists Sale;
-drop table if exists Sale_Item;
+drop table if exists SaleItem;
 
 create table if not exists Customer (
     customerId INT auto_increment Primary key,
@@ -33,17 +33,18 @@ create table if not exists Product (
 
 create table if not exists Sale(
     saleId INT auto_increment Primary key,
-    saleDate date not null,
-    customerId INT not null,
+    date date not null,
+    customer INT not null,
     status varchar(50) not null,
-    constraint sale_fk foreign key (customerId) references Customer (customerID)
+    constraint sale_fk foreign key (customer) references Customer (customerID)
 );
 
 create table if not exists SaleItem(
-    productId varchar(50),
-    saleId INT, 
-    quantity Decimal (10,2) not null,
+    product varchar(50),
+    saleId INT,
+    salePrice Decimal (10,2) not null,
+    quantityPurchased Decimal (10,2) not null,
     constraint sale_item_fk foreign key (saleId) references Sale (saleId),
-    constraint sale_item_fk1 foreign key (productId) references Product (productId)
-
+    constraint sale_item_fk1 foreign key (product) references Product (productId)
+    constraint sale_item_pk primary key (product, saleID, quantity)
 );

@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package web;
-import dao.ProductDAO;
-import domain.Product;
+import dao.SaleDAO;
+import domain.Sale;
 import io.jooby.Jooby;
 import io.jooby.StatusCode;
 /**
@@ -12,11 +12,11 @@ import io.jooby.StatusCode;
  * @author haydenaish
  */
 public class SaleModule extends Jooby{
-    public SaleModule(ProductDAO dao) {
+    public SaleModule(SaleDAO dao) {
 
         post("/api/sales", ctx -> {
-            Product product = ctx.body().to(Product.class);
-            dao.saveProduct(product);
+            Sale sale = ctx.body().to(Sale.class);
+            dao.save(sale);
             return ctx.send(StatusCode.CREATED);
         });
     }

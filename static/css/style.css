@@ -111,3 +111,11 @@ p {
     margin: 0 auto;
     width: 50%;
 }
+
+.quantity-container {
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+}

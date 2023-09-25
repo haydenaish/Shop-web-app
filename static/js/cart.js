@@ -21,12 +21,13 @@ class Sale {
 	}
 }
 
+var saleApi = "/api/sales";
 const app = Vue.createApp({
 
     data() {
         return {
             // models (comma separated key/value pairs)
-
+            quantity: 1
         };
     },
 
@@ -45,11 +46,33 @@ const app = Vue.createApp({
 
     methods: {
         // comma separated function declarations
+        addToCart(){
+            dataStore.commit("addItem", new SaleItem(this.product, this.quantity));
+            window.location = "view-products.html";
+        },
+        
         checkOut(){
             let sale = new Sale(this.customer, this.items);
-            
+            axios.post(saleApi, sale)
+                    .then(()=> {
+                        dataStore.commit("clearItems");
+                        window.location = "view-products.html";
+                    })
+                     .catch(error => {
+                        alert(error.response.data.message);
+                    });
+        },
+        
+        returnTotal(){
+            let total = 0;
+            for(const item of this.items){
+                total += item.salePrice * item.quantityPurchased;
+                console.log(item.salePrice);
+                console.log(item.quantityPurchased);
+//                console.log(item)
+            }
+            return total;
         }
-
     }
 
 });
@@ -57,8 +80,11 @@ const app = Vue.createApp({
 /* other component imports go here */
 
 // import data store
+import { navigationMenu } from './navigation-menu.js';
 import { dataStore } from './data-store.js'
-app.use(dataStore);	
+app.use(dataStore);
+app.component('navmenu', navigationMenu);
+
 
 // mount the page - this needs to be the last line in the file
 app.mount("main");

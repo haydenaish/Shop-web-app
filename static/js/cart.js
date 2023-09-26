@@ -52,6 +52,12 @@ const app = Vue.createApp({
         },
         
         checkOut(){
+            console.log(this.items.length);
+            if(this.items.length==0){
+                window.location = "view-products.html";
+                alert("Add Items to cart first");
+                return;
+            }
             let sale = new Sale(this.customer, this.items);
             axios.post(saleApi, sale)
                     .then(()=> {

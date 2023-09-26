@@ -30,6 +30,11 @@ export const dataStore = Vuex.createStore({
         // add item to cart
         addItem(state, item) {
             state.items.push(item);
+            state.selectedProduct = null;
+        },
+        
+        clearItems(state){
+            state.items = new Array();
         }
 
 

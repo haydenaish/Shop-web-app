@@ -16,6 +16,7 @@ public class SaleModule extends Jooby{
 
         post("/api/sales", ctx -> {
             Sale sale = ctx.body().to(Sale.class);
+//            System.out.println(sale.toString());
             dao.save(sale);
             return ctx.send(StatusCode.CREATED);
         });

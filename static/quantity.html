@@ -48,7 +48,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
             <form class="quantity-container" @submit.prevent="addToCart()">
                 <legend><b>Quantity</b></legend>
-                <label>How many do you want to buy?</label><input type="number" v-model="quantity" name="id" required/>
+                <label>How many do you want to buy?</label><input type="number" v-model="quantity" name="id" min ="1" :max="this.product.quantityInStock" required/>
                 <button type="submit">Add To Cart</button>
             </form>
         </main>

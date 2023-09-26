@@ -16,7 +16,7 @@ public class CustomerModule extends Jooby{
     public CustomerModule(CustomerDAO dao) {
         get("/api/customers/{username}", ctx -> {
             String username = ctx.path("username").value();
-            System.out.println(username);
+//            System.out.println(username);
 
             Customer customer = dao.searchByUserName(username);
 

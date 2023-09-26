@@ -19,14 +19,14 @@ import org.jdbi.v3.sqlobject.transaction.Transaction;
  */
 public interface SaleJdbiDAO extends SaleDAO {
 
-	@SqlUpdate(" INSERT STATEMENT GOES HERE ")
+	@SqlUpdate("insert into Sale(date, customer, status) values (:date, :customer.customerId, :status)")
 	@GetGeneratedKeys
 	Integer insertSale(@BindBean Sale sale);
 
-	@SqlUpdate(" INSERT STATEMENT GOES HERE ")
+	@SqlUpdate(" insert into SaleItem(product, saleId, salePrice, quantityPurchased) values (:product.productId, :saleId, :salePrice, :quantityPurchased)")
 	void insertSaleItem(@BindBean SaleItem item, @Bind("saleId") Integer saleId);
 
-	@SqlUpdate(" UPDATE STATEMENT GOES HERE ")
+	@SqlUpdate("UPDATE Product SET quantityInStock = quantityInStock - :quantityPurchased WHERE productId = :product.productId")
 	void updateStockLevel(@BindBean SaleItem item);
 
 	@Override

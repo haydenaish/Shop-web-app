@@ -45,6 +45,6 @@ create table if not exists SaleItem(
     salePrice Decimal (10,2) not null,
     quantityPurchased Decimal (10,2) not null,
     constraint sale_item_fk foreign key (saleId) references Sale (saleId),
-    constraint sale_item_fk1 foreign key (product) references Product (productId)
-    constraint sale_item_pk primary key (product, saleID, quantity)
+    constraint sale_item_fk1 foreign key (product) references Product (productId),
+    constraint sale_item_pk primary key (product, saleID, quantityPurchased)
 );

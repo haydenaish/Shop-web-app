@@ -10,7 +10,7 @@ import domain.Customer;
  *
  * @author haydenaish
  */
-public interface CustomerDAO {
+public interface CustomerDAO extends CredentialsValidator {
     
     /* method for saving a new customer which will be used when creating an account.*/
     void saveCustomer(Customer customer);

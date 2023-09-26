@@ -79,7 +79,8 @@ const app = Vue.createApp({
             }
             return total;
         }
-    }
+    },
+    mixins: [BasicAccessAuthentication]
 
 });
 
@@ -91,6 +92,8 @@ import { dataStore } from './data-store.js'
 app.use(dataStore);
 app.component('navmenu', navigationMenu);
 
+// import authentication module
+import { BasicAccessAuthentication } from './authentication.js';
 
 // mount the page - this needs to be the last line in the file
 app.mount("main");

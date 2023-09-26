@@ -14,6 +14,7 @@ export const dataStore = Vuex.createStore({
         items: null;
 
         selectedProduct: null;
+        authToken: null;
     },
 
     mutations: {
@@ -32,9 +33,13 @@ export const dataStore = Vuex.createStore({
             state.items.push(item);
             state.selectedProduct = null;
         },
-        
-        clearItems(state){
+
+        clearItems(state) {
             state.items = new Array();
+        },
+        
+        authToken(state, token) {
+            state.authToken = token;
         }
 
 

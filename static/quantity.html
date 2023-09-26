@@ -38,11 +38,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </tr>
                     <tr>
                         <td><b>List Price</b></td>
-                        <td>{{product.listPrice}}</td>
+                        <td>{{ formatCurrency(product.listPrice)}}</td>
                     </tr>
                     <tr>
                         <td><b>Quantity</b></td>
-                        <td>{{product.quantityInStock}}</td>
+                        <td>{{formatNumber(product.quantityInStock, 2)}}</td>
                     </tr>
                 </table>
             </div>

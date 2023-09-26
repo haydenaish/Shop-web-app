@@ -36,7 +36,7 @@ const app = Vue.createApp({
                         window.location = 'view-products.html';
                     })
                     .catch(error => {
-                        alert(error.response.data.message);
+                        alert("Incorrect Username or password");
                     });
             }
 

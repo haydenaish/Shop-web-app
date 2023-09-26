@@ -80,7 +80,7 @@ const app = Vue.createApp({
             return total;
         }
     },
-    mixins: [BasicAccessAuthentication]
+    mixins: [BasicAccessAuthentication, NumberFormatter]
 
 });
 
@@ -94,6 +94,7 @@ app.component('navmenu', navigationMenu);
 
 // import authentication module
 import { BasicAccessAuthentication } from './authentication.js';
+import { NumberFormatter } from './number-formatter.js';
 
 // mount the page - this needs to be the last line in the file
 app.mount("main");

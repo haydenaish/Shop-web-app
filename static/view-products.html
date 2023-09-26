@@ -36,8 +36,8 @@
                         <td> {{product.name}}</td>
                         <td> {{product.description}}</td>
                         <td> {{product.category}}</td>
-                        <td> {{product.listPrice}}</td>
-                        <td> {{product.quantityInStock}}</td>
+                        <td> {{formatCurrency(product.listPrice)}}</td>
+                        <td> {{formatNumber(product.quantityInStock, 2)}}</td>
                         <td><button @click.prevent="buyProduct(product)">Buy</button></td>
                     </tr>
                 </tbody>

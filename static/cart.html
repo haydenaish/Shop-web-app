@@ -30,14 +30,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <tr v-for ="item in items" >
                         <td> {{item.product.name}}</td>
                         <td> {{item.salePrice}}</td>
-                        <td> {{item.quantityPurchased}}</td>
-                        <td> {{item.salePrice * item.quantityPurchased}}</td>
+                        <td> {{formatNumber(item.quantityPurchased, 2)}}</td>
+                        <td> {{formatCurrency(item.salePrice * item.quantityPurchased)}}</td>
                     </tr>
                 </tbody>
             </table>
             <form class="quantity-container" @submit.prevent="checkOut()">
                 <legend><b>Order Total</b></legend>
-                <label> {{returnTotal()}}</label>
+                <label> {{formatCurrency(returnTotal())}}</label>
                 <button type="submit">Checkout</button>
             </form>
         </main>

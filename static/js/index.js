@@ -13,6 +13,7 @@ app.use(dataStore);
 
 // import authentication module
 import { BasicAccessAuthentication } from './authentication.js';
+import { NumberFormatter } from './number-formatter.js';
 
 // attach the controller to the <main> tag
 app.mount("main");

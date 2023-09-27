@@ -42,7 +42,7 @@ end box
 
 database "Database" as db
 
-page -> controller++ : « mounted »
+page -> controller++ : filterByCategory(category)
 controller -> axios++ : get("/api/categories/${category}")
 axios -> service++ : HTTP GET /api/categories/{category}
 service -> module++ : get("/api/categories/{category}"

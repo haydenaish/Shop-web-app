@@ -27,7 +27,7 @@ const app = Vue.createApp({
             addCustomer() {
             axios.post(customerApi, this.customer)
                     .then(() => {
-                        window.location = 'view-products.html';
+                        window.location = 'sign-in.html';
                     })
                     .catch(error => {
                         alert(error.response.data.message);

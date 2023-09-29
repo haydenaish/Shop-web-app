@@ -13,7 +13,7 @@ export const navigationMenu = {
 			return this.customer != null;
 		},
 		...Vuex.mapState({
-			customer: 'customer'
+			customer: 'customer',
 		})
 	},
 

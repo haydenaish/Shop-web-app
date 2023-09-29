@@ -119,3 +119,15 @@ p {
     margin: 0 auto;
     width: 50%;
 }
+
+
+#categories{
+	display: block;
+	text-align: center;
+}
+
+/* add some gaps between the major buttons */
+#categories button {
+	margin-left: 2pt;
+	margin-right: 2pt;
+}
